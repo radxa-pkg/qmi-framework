@@ -1,0 +1,13 @@
+# Build glue for upstream qmi-framework (autotools).
+# The rsdk template drives the compile from debian/rules override_dh_install.
+MULTIARCH := $(shell dpkg-architecture -qDEB_HOST_MULTIARCH 2>/dev/null || echo aarch64-linux-gnu)
+BUILDARCH := $(shell dpkg-architecture -qDEB_BUILD_GNU_TYPE 2>/dev/null || echo aarch64-linux-gnu)
+
+.PHONY: build_local
+build_local:
+	cd src && sh ./autogen.sh
+	cd src && ./configure --prefix=/usr --libdir=/usr/lib/$(MULTIARCH) --build=$(BUILDARCH)
+	$(MAKE) -C src
+	$(MAKE) -C src install DESTDIR=$(CURDIR)/debian/tmp
+	find $(CURDIR)/debian/tmp -name "*.la" -delete
+	rm -f $(CURDIR)/debian/tmp/usr/bin/qcci_test $(CURDIR)/debian/tmp/usr/bin/qcsi_test

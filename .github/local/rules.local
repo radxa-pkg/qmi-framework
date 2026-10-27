@@ -1,0 +1,25 @@
+# Upstream is built by build_local (see Makefile.local); debhelper must not
+# run its own autotools stages.
+override_dh_auto_configure:
+	@true
+override_dh_auto_build:
+	@true
+override_dh_auto_test:
+	@true
+override_dh_auto_install:
+	@true
+
+override_dh_install:
+	$(MAKE) -f Makefile build_local
+	dh_install --sourcedir=debian/tmp
+
+override_dh_missing:
+	dh_missing --fail-missing
+
+# qmi-framework is Architecture: all, so debhelper's elf-tools addon
+# (dh_strip/dh_makeshlibs/dh_shlibdeps) is skipped entirely. In compat 10+
+# only dh_makeshlibs would install debian/qmi-framework.shlibs, so install
+# the hand-maintained shlibs file into the control archive explicitly here.
+override_dh_installdeb:
+	dh_installdeb
+	install -m 644 debian/qmi-framework.shlibs debian/qmi-framework/DEBIAN/shlibs

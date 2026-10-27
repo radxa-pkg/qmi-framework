@@ -1,0 +1,4 @@
+libqmi_common 1 qmi-framework (>= 1:0.1.3)
+libqencdec 1 qmi-framework (>= 1:0.1.3)
+libqcci 1 qmi-framework (>= 1:0.1.3)
+libqcsi 1 qmi-framework (>= 1:0.1.3)

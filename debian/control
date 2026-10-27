@@ -8,13 +8,42 @@ Build-Depends: debhelper-compat (= 13),
                devscripts,
                lintian,
                dh-exec,
+               dh-autoreconf,
+               pkg-config,
                pandoc,
 
 Package: qmi-framework
 Architecture: all
 Section: admin
 Priority: optional
-Depends: ${misc:Depends},
-Description: qmi-framework
- This package provides the qmi-framework.
+Depends: ${shlibs:Depends},
+         ${misc:Depends},
+Provides: libqmi-common1 (= 99:0.0.1),
+          libqencdec1 (= 99:0.0.1),
+          libqcci1 (= 99:0.0.1),
+          libqcsi1 (= 99:0.0.1),
+Conflicts: libqmi-common1,
+           libqencdec1,
+           libqcci1,
+           libqcsi1,
+Replaces: libqmi-common1,
+          libqencdec1,
+          libqcci1,
+          libqcsi1,
+Breaks: libqmi-common1,
+        libqencdec1,
+        libqcci1,
+        libqcsi1,
+Description: Qualcomm QMI framework runtime libraries
+ This package provides the Qualcomm Messaging Interface (QMI) framework
+ runtime libraries: libqmi_common, libqencdec, libqcci and libqcsi.
 
+Package: qmi-framework-dev
+Architecture: all
+Section: admin
+Priority: optional
+Depends: qmi-framework (= ${binary:Version}),
+         ${misc:Depends},
+Description: Qualcomm QMI framework development files
+ This package provides the development headers for the Qualcomm Messaging
+ Interface (QMI) framework.

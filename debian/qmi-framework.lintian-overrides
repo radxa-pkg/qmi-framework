@@ -1,0 +1,11 @@
+qmi-framework binary: shared-library-lacks-prerequisites [usr/lib/aarch64-linux-gnu/libqmi_common.so.1.0.0]
+qmi-framework binary: package-name-doesnt-match-sonames libqcci1 libqcsi1 libqencdec1 libqmi-common1
+qmi-framework binary: arch-independent-package-contains-binary-or-object [usr/lib/aarch64-linux-gnu/libqcci.so.1.0.0]
+qmi-framework binary: arch-independent-package-contains-binary-or-object [usr/lib/aarch64-linux-gnu/libqcsi.so.1.0.0]
+qmi-framework binary: arch-independent-package-contains-binary-or-object [usr/lib/aarch64-linux-gnu/libqencdec.so.1.0.0]
+qmi-framework binary: arch-independent-package-contains-binary-or-object [usr/lib/aarch64-linux-gnu/libqmi_common.so.1.0.0]
+qmi-framework binary: triplet-dir-and-architecture-mismatch is for arm64 instead of all [usr/lib/aarch64-linux-gnu/]
+qmi-framework binary: lacks-ldconfig-trigger
+qmi-framework binary: no-shlibs
+qmi-framework binary: unstripped-binary-or-object
+qmi-framework binary: undeclared-elf-prerequisites

@@ -1,0 +1,5 @@
+usr/include/qmi_framework/
+usr/lib/*/libqmi_common.so
+usr/lib/*/libqencdec.so
+usr/lib/*/libqcci.so
+usr/lib/*/libqcsi.so

@@ -1,6 +1,6 @@
-qmi-framework (0.1.0-1) UNRELEASED; urgency=medium
+qmi-framework (1:0.1.3-1) UNRELEASED; urgency=medium
 
-  * Add initial Debian packaging support
+  * Initial packaging based on upstream v0.1.3 (6ea813c).
 
  -- "Radxa Computer (Shenzhen) Co., Ltd." <dev@radxa.com>  Thu, 01 Jan 1970 08:00:00 +0800
 

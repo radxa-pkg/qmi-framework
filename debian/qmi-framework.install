@@ -1,0 +1,4 @@
+usr/lib/*/libqmi_common.so.1*
+usr/lib/*/libqencdec.so.1*
+usr/lib/*/libqcci.so.1*
+usr/lib/*/libqcsi.so.1*

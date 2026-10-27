@@ -23,3 +23,17 @@
 # Logs
 /*.log
 
+
+# Build artifacts
+/build/
+/debian/tmp/
+/debian/files
+/debian/*.substvars
+/debian/.debhelper/
+/debian/qmi-framework/
+/debian/qmi-framework-dev/
+*.deb
+*.ddeb
+*.build
+*.buildinfo
+*.changes
